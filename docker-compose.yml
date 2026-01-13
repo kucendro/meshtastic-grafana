@@ -3,20 +3,20 @@ volumes:
   timescaledb_data:
 
 services:
-  grafana:
-    build:
-      context: .
-      dockerfile: ./docker/grafana/Dockerfile.grafana
-    restart: unless-stopped
-    ports:
-      - "3000:3000"
-    networks:
-      - mesh-bridge
-    volumes:
-      - grafana_data:/var/lib/grafana
-      - ./docker/grafana/provisioning:/etc/grafana/provisioning
-    depends_on:
-      - timescaledb
+  # grafana:
+  #   build:
+  #     context: .
+  #     dockerfile: ./docker/grafana/Dockerfile.grafana
+  #   restart: unless-stopped
+  #   ports:
+  #     - "3000:3000"
+  #   networks:
+  #     - mesh-bridge
+  #   volumes:
+  #     - grafana_data:/var/lib/grafana
+  #     - ./docker/grafana/provisioning:/etc/grafana/provisioning
+  #   depends_on:
+  #     - timescaledb
 
   exporter:
     build:
